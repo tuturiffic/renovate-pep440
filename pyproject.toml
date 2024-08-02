@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools", "setuptools_scm[toml]"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "renovate_pep440"
+description = "A minimal reproduction to isolate PEP440 versioning quetions with Renovate"
+authors = [{ name = "tuturiffic", email = "52968137+tuturiffic@users.noreply.github.com" }]
+readme = "README.md"
+requires-python = "~=3.9"
+dynamic = ["version"]
+dependencies = [
+    "opentelemetry-api >=1.22.0, <2.0",
+    "opentelemetry-sdk >=1.22.0, <2.0",
+    "opentelemetry-exporter-otlp >=1.22.0, <2.0",
+    "opentelemetry-instrumentation >=0.43b0, <1.0",
+    "opentelemetry-instrumentation-asyncpg >=0.43b0, <1.0",
+    "opentelemetry-instrumentation-fastapi >=0.43b0, <1.0",
+    "opentelemetry-instrumentation-httpx >=0.43b0, <1.0",
+    "opentelemetry-instrumentation-logging >=0.43b0, <1.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools_scm]
